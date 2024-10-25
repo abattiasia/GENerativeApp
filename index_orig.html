@@ -56,8 +56,6 @@
         <p>
             At Mystro GmbH, we are pioneering innovations in Machine Learning and Deep Learning, pushing the boundaries of what technology can achieve. 
             With the expertise of Mr. Mahmoud and Ms. Ola, we have successfully integrated cutting-edge Generative AI to create new solutions in the industries.
-          
-  Our heartfelt thanks go to Mr. Mahmoud, Ms. Ola, and the entire team at Mystro GmbH for their invaluable contributions. We truly appreciate the wonderful and helpful time we have shared together. Your support has been crucial to our success!
         </p>
         <p>
             Machine Learning is revolutionizing data analysis, while Deep Learning mimics the human brain to solve complex problems. 
@@ -75,24 +73,27 @@
         <p>Learn about different AI models such as OpenAI and Ollama used to build chat applications.</p>
         <pre><code class="python">
 # Example of using OpenAI with Python
-Example Code Snippets:
-        
-Ex.01:
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_ollama.llms import OllamaLLM
-template = """Question: {question}"""
-prompt = ChatPromptTemplate.from_template(template)
-llm = OllamaLLM(model="llama3.2", stream=True)
-for chunk in llm.stream(prompt.format_messages(question="What is LangChain?")):
-    print(chunk, end='')
-    
-    
-Ex.02:
-from langchain_ollama.llms import OllamaLLM
-ollama = OllamaLLM(model="llama3.2")
-res = ollama.run("What is Ollama?")
-print(f"Sentiment: {res}")
+import openai
 
+openai.api_key = 'your-api-key'
+
+response = openai.Completion.create(
+    engine="text-davinci-003",
+    prompt="Explain generative AI.",
+    max_tokens=100
+)
+
+print(response.choices[0].text.strip())
+
+# Example of using Ollama with Python
+import ollama
+
+response = ollama.generate(
+    model="llama-2",
+    prompt="What is generative AI?"
+)
+
+print(response)
         </code></pre>
 
         <!-- Models Section Image -->
@@ -120,7 +121,7 @@ print(f"Sentiment: {res}")
         <p>Hi, I am Dr. Attia. I specialize in Machine Learning, Deep Learning, and Generative AI. At Mystro GmbH, we work on state-of-the-art AI applications that are transforming industries.</p>
         <!-- About Me Image -->
         <div class="text-center">
-            <img src="https://avatars.githubusercontent.com/u/61910080?v=4&size=64" class="img-fluid mt-4" alt="About Me Image">
+            <img src="https://images.unsplash.com/photo-1485893086445-ed75865251e4" class="img-fluid mt-4" alt="About Me Image">
         </div>
     </section>
 
